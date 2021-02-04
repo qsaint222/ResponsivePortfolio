@@ -282,7 +282,7 @@ img {
   bottom: 0;
 }
 .home_img img {
-  width: 450px;
+  width: 240px;
 }
 .home_social {
   display: flex;
@@ -336,6 +336,41 @@ img {
 }
 
 /*===== QUALIFICATION =====*/
+.qualification_container{
+  row-gap: 2.5rem;
+
+}
+.qualification_title{
+  font-size: var(--h3-font-size);
+  color: var(--first-color);
+  margin-bottom: .7rem;
+  display: flex;
+  align-items: center;
+}
+.qualification-title-icon{  
+  font-size: 1.5rem;
+  margin: var(--mb-1);
+}
+.qualification_box{
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #cccccc;
+}
+.qualification_area{
+  font-size:var(--normal-font-size);
+  color: var(--first-color);
+  margin-bottom: var(--mb-1);
+  font-weight: var(--font-medium);
+}
+.qualification_icon, .qualification_work{
+  font-size: var(--smaller-font-size);
+  color: var(--first-color-light);
+}
+.qualification_work{
+  display: block;
+}
+
+
+
 
 /*===== SERVICES =====*/
 
