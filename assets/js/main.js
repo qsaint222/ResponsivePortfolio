@@ -1,5 +1,5 @@
 /*===== SHOW MENU =====*/
-const showMenu = (toggleId,navId)=>{
+const showMenu=(toggleId,navId)=>{
     const toggle = document.getElementById(toggleId),
     nav = document.getElementById(navId)
 
@@ -58,19 +58,62 @@ function scrollTop(){
     const scrollTop = document.getElementById('scroll-top')
     if (this.scrollY >= 560) scrollTop.classList.add('show-scroll'); else   scrollTop.classList.remove('show-scroll')
 }
-
-
 window.addEventListener('scroll',scrollTop)
 
-
 /*===== MIXITUP FILTER PORTFOLIO =====*/ 
+const mixer = mixitup('.portfolio_container', {
+    selectors: {
+        target: '.portfolio_content' 
+    },
+    animation: {
+        duration: 400  
+    }
 
+})
 /* Link active portfolio */ 
+const linkPortfolio = document.querySelectorAll('.portfolio_item')
+function activePortfolio(){
+    if(linkPortfolio){
+        linkPortfolio.forEach(l => l.classList.remove('active-portfolio'))
+        this.classList.add('active-portfolio')
+
+    }
+}
+linkPortfolio.forEach(l => l.addEventListener('click', activePortfolio))
 
 
 /*===== SWIPER CAROUSEL =====*/ 
+const mySwiper = new Swiper('.testimonial_container',{
+    spaceBetween: 16,
+    loop: true,
+    grabCursor: true,
+
+
+    // if we need pagination
+    pagination:{
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    breakpoints:{
+        640:{
+            slidesPerView: 2, 
+        },
+        1024:{
+            slidesPerView: 3, 
+        },
+
+    }
+
+})
+
 
 
 /*===== GASP ANIMATION =====*/ 
+gsap.from('.home_img',{opacity: 0, duration: 2, delay: .5, x:60})
+gsap.from('.home_data',{opacity: 0, duration: 2, delay: .8, y:25})
+gsap.from('.home_greeting, .home_name, .home_profession, .home_button',{opacity: 0, duration: 2, delay: 1, y:25,ease:'expo.out', stagger: .2})
+gsap.from('.nav_logo, .nav_toggle',{opacity: 0, duration: 2, delay: 1.5, y:25,ease:'expo.out', stagger: .2})
+gsap.from('.nav_item',{opacity: 0, duration: 2, delay: 1.5, y:25,ease:'expo.out', stagger: .2})
+gsap.from('.home_social-icon',{opacity: 0, duration: 2, delay: 2.3, y:25,ease:'expo.out', stagger: .2})
 
 
