@@ -736,7 +736,6 @@ p.education{
 }
 .foot-wave{
   background-image: url('./wave.png');
-  background-color:rgb(10, 165, 255);
   position: absolute;
   left: 0;
   top: 0;
@@ -782,6 +781,16 @@ p.education{
 
 
 /*===== MEDIA QUERIES =====*/
+@media screen and (min-width: 360px){
+  .foot-wave-box{
+    height: 20px;
+  }
+  .foot-wave{
+  width: 99%;
+  height: 79%;
+
+}
+}
 @media screen and (min-width: 410px){
   
   .foot-wave{
