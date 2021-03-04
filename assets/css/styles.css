@@ -702,6 +702,7 @@ p.education{
   background-color: rgb(10, 165, 255);
   color: var(--first-color-light);
   text-align: center;
+  
   position: relative;
   
 }
@@ -781,6 +782,14 @@ p.education{
 
 
 /*===== MEDIA QUERIES =====*/
+@media screen and (min-width: 410px){
+  
+  .foot-wave{
+  width: 100%;
+  height: 30%;
+  
+}
+}
 @media screen and (min-width: 576px){
   .home_img img{
     width: 330px;
@@ -793,6 +802,13 @@ p.education{
   width: 450px;
   justify-self: center;
 }
+.foot-wave{
+  width: 100%;
+  height: 43%;
+  
+}
+
+
 
 }
 @media screen and (min-width: 768px){
@@ -871,7 +887,11 @@ p.education{
   .project_title{
     font-size: 2.5rem;
   }
-
+  .foot-wave{
+    width: 100%;
+    height: 55%;
+    
+  }
 } 
 
 
