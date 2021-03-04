@@ -220,7 +220,7 @@ img {
 .scroll-header .nav_logo,
 .scroll-header .nav_toggle,
 .scroll-header .nav_link {
-  color: var(--first-color-dark);
+  color: yellow;
 }
 .scroll-header .nav_menu {
   background-color: var(--first-color-lighten);
