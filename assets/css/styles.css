@@ -140,7 +140,7 @@ img {
   top: 0;
   left: 0;
   z-index: var(--z-fixed);
-  background-color: #000000;
+  background-color: transparent;
 }
 
 /*===== NAV =====*/
@@ -159,21 +159,31 @@ img {
     width: 100%;
     padding-top: 1.5rem;
     text-align: center;
-    background-color: #000000;
+    background-color:black;
     transition: 0.4s;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 0 0 1rem 1rem;
   }
+  
 }
 .nav_item {
   margin-bottom: var(--mb-3);
 }
+
 .nav_link {
   color: var(--first-color-lighten);
   transition: 0.3s;
+
 }
 .nav_link:hover {
   color:  rgb(10, 165, 255);
+  
+}
+
+.nav_item{
+  bottom: -0.7rem;
+
+  
 }
 
 .nav_logo,
@@ -195,15 +205,22 @@ img {
 /* Active menu */
 .active-link {
   position: relative;
+
+  
 }
 .active-link::after {
   content: "";
   position: absolute;
   bottom: -0.7rem;
   left: 0;
-  width: 65%;
+  width: 55%;
   height: 3px;
   background-color: rgb(10, 165, 255);
+  transition: width .3s ease;
+
+}
+.active-link:hover::after {
+  width: 100%;
 }
 
 /* Change background header */
@@ -220,7 +237,7 @@ img {
 .scroll-header .nav_logo,
 .scroll-header .nav_toggle,
 .scroll-header .nav_link {
-  color: yellow;
+  color: var(--first-color-dark);
 }
 .scroll-header .nav_menu {
   background-color: var(--first-color-lighten);
@@ -234,18 +251,21 @@ img {
   justify-content: center;
   align-items: center;
   padding: 0.1rem;
-  background: rgba(123, 111, 113, 0.7);
+  background: none;
   border-radius: 0.7rem;
   z-index: var(--z-tooltip);
   transition: 0.4s;
   visibility: hidden;
 }
-.scrolltop:hover {
-  background-color: var(--first-color);
+.scrolltop:hover, .scrolltop_icon:hover{
+  background: none;
+  color: var(--first-color);
+  
 }
 .scrolltop_icon {
   font-size: 2rem;
-  color: var(--first-color-lighten);
+  color:black;
+
 }
 /* Show scroll top */
 .show-scroll {
@@ -254,8 +274,12 @@ img {
 }
 /*===== HOME =====*/
 .home {
-  background-color: #000000;
+  /*background-color: red;*/
   overflow: hidden;
+  background: url("img/journey.jpg");
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .home_container {
   position: relative;
@@ -286,13 +310,10 @@ img {
   margin-bottom: var(--mb-3);
 }
 .home_img {
-  position: absolute;
-  right: 0;
-  bottom: 0;
+  min-height: 100vh;
+  background-size: cover ;
 }
-.home_img img {
-  width: 240px;
-}
+
 
 .home_social {
   display: flex;
@@ -319,15 +340,37 @@ img {
 }
 .button:hover {
   background-color: var(--first-color);
-  color: white;
+  color:  rgba(50, 56, 67);
   
 }
 .button-light {
-  background:none;
-  color:  rgb(10, 165, 255);
+  background:transparent;
+  color:  white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 12px;
+  border-radius: 25px;
+  border: 2px solid rgb(10, 165, 255);
+  cursor: point;
+  position: relative;
+  overflow: hidden;
+}
+.button-light span{
+  background-color:rgb(10, 165, 255);
+  height: 100%;
+  width: 0%;
+  border-radius: 25px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  transition: width 0.5s ease;
+}
+.button-light:hover span{
+  width: 100%;
 }
 .button-light:hover{
-  color: rgb(12, 89, 232);
+  color: white;
   background: none;
 }
 
@@ -659,9 +702,54 @@ p.education{
   background-color: rgb(10, 165, 255);
   color: var(--first-color-light);
   text-align: center;
+  position: relative;
+  
+}
+.foot-wave-box{
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  overflow: hidden;
+  height: 53px;
+  
+
+}
+.footer-animation{
+  animation: foot-wave 7s linear infinite;
+  left: auto;
+  right: 0;
+}
+@keyframes foot-wave {
+  0%{
+    transform: translateX(0%);
+
+  } 
+  50%{
+    transform: translateX(50%);
+  }
+  100%{
+    transform: translateX(100%);
+  }
+
+}
+.foot-wave{
+  background-image: url('./wave.png');
+  background-color:rgb(10, 165, 255);
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-size: contain;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  background-position: bottom;
+  background-repeat: repeat-x;
+
 }
 .footer_container{
-  padding: 1rem 0;
+  padding: 3.5rem 0;
+
 }
 .footer_title{
   font-size: var(--h1-font-size);
@@ -670,12 +758,12 @@ p.education{
   font-weight: var(--font-semi-bold);
 }
 .footer_description{
-  margin-bottom: var(--mb-3);
+  margin-bottom: var(--mb-2);
   color: white;
   
 }
 .footer_social{
-  margin-bottom: var(--mb-6);
+  margin-bottom: var(--mb-3);
 }
 .footer_link{
   font-size: 1.4rem;
